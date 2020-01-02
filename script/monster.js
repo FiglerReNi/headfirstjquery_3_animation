@@ -10,29 +10,40 @@ $(document).ready(function () {
 
     $('#head').click(function () {
         if (headclix < 9) {
+            //relative position
+            animation('#head', "-=367px");
             headclix++;
         } else {
+            //absolute position
+            animation('#head', "0px");
             headclix = 0;
         }
     });
     $('#eyes').click(function () {
         if (eyesclix < 9) {
+            animation('#eyes', "-=367px");
             eyesclix++;
         } else {
+            animation('#eyes', "0px");
             eyesclix = 0;
         }
     });
     $('#nose').click(function () {
         if (noseclix < 9) {
+            animation('#nose', "-=367px");
             noseclix++;
         } else {
+            animation('#nose', "0px");
             noseclix = 0;
         }
     });
     $('#mouth').click(function () {
         if (mouthclix < 9) {
+            animation('#mouth', "-=367px");
             mouthclix++;
         } else {
+            debugger;
+            animation('#mouth',"0px");
             mouthclix = 0;
         }
     });
@@ -48,6 +59,11 @@ function lightning_three(){
     $('#lightning3').fadeIn('fast').fadeOut('fast');
 }
 
+function animation(item, a){
+    debugger;
+    $(item).animate({left:a}, 500);
+}
+
 //effects
 //CSS opacity property
 //fadeIn - slow, normal, fast, miliseconds
@@ -60,3 +76,7 @@ function lightning_three(){
 //slideUp
 //slideDown
 //slideToggle
+
+//animation stop
+//$.fx.off = true;
+//stop
